@@ -4,11 +4,11 @@ description: This is summary from the talk session.
 
 # Builder
 
-## ✅ Goal
+## ✅Goal
 
 \[Insert you goal here\]
 
-## 🏛 Architecture
+## 🏛Architecture
 
 {% hint style="info" %}
 \[If needed add notes here\]
@@ -16,19 +16,17 @@ description: This is summary from the talk session.
 
 \[Insert an image to describe the expected architecture\]
 
-## 🌎 Real case example
+## 🌎Real case example
 
 \[Describe your case\]
 
 \[Add an image to support your text\]
 
-## ☢ What problems does it solve?
+## ☢What problems does it solve?
 
 * \[Use a bullet list to describe the problems\]
-
-  -
-
-## ⏲ When to use it?
+* 
+## ⏲When to use it?
 
 \[Describe conditions to use it\]
 
@@ -36,7 +34,7 @@ description: This is summary from the talk session.
 \[Use hints to clarify ambiguous cases\]
 {% endhint %}
 
-## ⚠ When not to use it?
+## ⚠When not to use it?
 
 \[Describe conditions to avoid them\]
 
@@ -44,19 +42,19 @@ description: This is summary from the talk session.
 \[Use warning hints to clarify ambiguous cases\]
 {% endhint %}
 
-## ‼ Common mistakes when implementing
+## ‼Common mistakes when implementing
 
 ### \[Use heading 2 to summarize the mistake\]
 
 \[and describe it bellow\]
 
-## 🎭 Effects
+## 🎭Effects
 
 ### Advantages
 
 * \[Describe as bullet list\]
 
-### Disadvantages
+### Disadvantages 
 
 * \[Describe as bullet list\]
 
@@ -70,7 +68,7 @@ description: This is summary from the talk session.
 Use a hint to describe the suggested solution
 {% endhint %}
 
-## Demo
+## Demo 
 
 {% hint style="info" %}
 The demo is hosted on the next github repository
