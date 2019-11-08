@@ -22,7 +22,7 @@ description: This is summary from the talk session.
 
 \[Add an image to support your text\]
 
-## ☢ What problems does it solve?
+## ☢What problems does it solve?
 
 * \[Use a bullet list to describe the problems\]
 
