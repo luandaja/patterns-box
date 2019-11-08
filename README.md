@@ -42,6 +42,7 @@ The patterns-box talks are an effort to get involved on different software desig
 
 ### Technical support
 
-- Claudia Montalvo
-- Cesar Velarde
-- Luis Antoni del Aguila Jacobo
+* Claudia Montalvo
+* Cesar Velarde
+* Luis Antoni del Aguila Jacobo
+
