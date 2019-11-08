@@ -24,8 +24,9 @@ description: This is summary from the talk session.
 
 ## ☢ What problems does it solve?
 
-- \[Use a bullet list to describe the problems\]
--
+* \[Use a bullet list to describe the problems\]
+
+  -
 
 ## ⏲ When to use it?
 
@@ -53,11 +54,11 @@ description: This is summary from the talk session.
 
 ### Advantages
 
-- \[Describe as bullet list\]
+* \[Describe as bullet list\]
 
 ### Disadvantages
 
-- \[Describe as bullet list\]
+* \[Describe as bullet list\]
 
 ### Drawbacks
 
@@ -76,3 +77,4 @@ The demo is hosted on the next github repository
 {% endhint %}
 
 \[Link here\]
+

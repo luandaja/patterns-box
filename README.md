@@ -8,17 +8,21 @@ The patterns-box talks are an effort to get involved on different software desig
 
 ## Talks
 
-- Bridge - by _James Ordinola_
-- Facade - by _Claudia Montalvo_
-- Builder - by _José Palacios_
-- Repository - by _Miguel Salas_
-- Mediator - by _James Ordinola_
-- Specification - by _Miguel Salas_
-- Chain of responsibility - by _Claudia Montalvo_
-- Stategy - by _José Palacios_
+* Bridge - by _James Ordinola_
+
+{% page-ref page="patterns/bridge.md" %}
+
+* Facade - by _Claudia Montalvo_
+* Builder - by _José Palacios_
+* Repository - by _Miguel Salas_
+* Mediator - by _James Ordinola_
+* Specification - by _Miguel Salas_
+* Chain of responsibility - by _Claudia Montalvo_
+* Stategy - by _José Palacios_
 
 ### Technical support
 
-- Claudia Montalvo
-- Cesar Velarde
-- Luis Antoni del Aguila Jacobo
+* Claudia Montalvo
+* Cesar Velarde
+* Luis Antoni del Aguila Jacobo
+
