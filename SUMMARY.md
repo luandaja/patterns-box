@@ -1,4 +1,15 @@
 # Table of contents
 
-* [Initial page](README.md)
+* [Patterns box](README.md)
+
+## Patterns
+
+* [Bridge](patterns/bridge.md)
+* [Facade](patterns/facade.md)
+* [Builder](patterns/builder.md)
+* [Repository](patterns/repository.md)
+* [Mediator](patterns/mediator.md)
+* [Specification](patterns/specification.md)
+* [Chain of responsibility](patterns/chain-of-responsibility.md)
+* [Stategy](patterns/stategy.md)
 
