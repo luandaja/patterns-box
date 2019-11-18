@@ -2,7 +2,7 @@
 description: This is summary from the talk session.
 ---
 
-# Stategy
+# Strategy
 
 ## ✅Goal
 

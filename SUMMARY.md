@@ -11,6 +11,6 @@
 * [Mediator](patterns/mediator.md)
 * [Specification](patterns/specification.md)
 * [Chain of responsibility](patterns/chain-of-responsibility.md)
-* [Stategy](patterns/stategy.md)
+* [Strategy](patterns/stategy.md)
 * [Instructions for presenters](instructions-for-presenters.md)
 
