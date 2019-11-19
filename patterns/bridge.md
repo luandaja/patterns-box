@@ -1,12 +1,16 @@
 ---
-description: This is summary from the talk session.
+Bridge Pattern is a structural design pattern that divides business logic or huge class into separate class hierarchies that can be developed independently.
 ---
 
 # Bridge
 
 ## ✅Goal
 
-\[Insert you goal here\]
+"Decoupling an abstraction from its implementation so that both can vary independently."
+
+## 🌎Real case example
+
+\[Describe your case\]
 
 ## 🏛Architecture
 
@@ -15,12 +19,6 @@ description: This is summary from the talk session.
 {% endhint %}
 
 \[Insert an image to describe the expected architecture\]
-
-## 🌎Real case example
-
-\[Describe your case\]
-
-\[Add an image to support your text\]
 
 ## ☢What problems does it solve?
 
