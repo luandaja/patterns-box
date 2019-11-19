@@ -6,7 +6,6 @@ description: Facade is the most used structural design pattern according with Do
 
 ## ✅Goal
 
-
 _**"Simplify how to consume a complex existing system"**_
 
 Facade pattern is often needed when there is a large number of interdependent classes or the system is very complex. It is used to hide the complexities of a larger system providing a simple interface to the client. In other words, it is a wrapper class used to hide the implementation details and minimizing the communication and dependencies between subsystems.
@@ -16,9 +15,7 @@ Two keywords to help us understand this pattern are:
 1. **Simplication** This is the goal of this design pattern. Simplify a complicated system.
 2. **Restriction** Simplification often comes with a “sacred cost”, restriction. By simplifying the code, we restrict clients from fully functionality  in comparison to working with the subsystem directly. However, it includes only those features that clients really care about.
 
-
 ## 🏛Architecture
-
 
 ![](.gitbook/assets/facade2.jpg)
 
@@ -46,7 +43,6 @@ When we setup a routine on google home assistant it can involve, turn on the lig
 Google assistant makes easier for the clients \(as google home speaker or mobile phone\) to interact with our applications. 
 
 Therefore Google assistant is serving as a facade which makes easier for the clients to interact with subsystems hiding all that complexity.
-
 
 ## ☢What problems does it solve?
 
@@ -120,7 +116,6 @@ Facade will limit the features and flexibility that subsystems can offer.
 {% endhint %}
 
 ## ‼Common mistakes when implementing
-
 
 {% hint style="danger" %}
 **Creating unnecessary facades.**   
