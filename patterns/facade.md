@@ -33,7 +33,6 @@ So, translating our example to an architecture diagram we have:
 
 
 ## 🌎Real case example
-
 ![](.gitbook/assets/facade3.jpg)
 
 Let’s think on another case where this pattern is applied.  
