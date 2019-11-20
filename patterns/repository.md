@@ -49,7 +49,7 @@ public class NationalLibraryRepository()
 {
 }
 ```
- Instead, we should have a separate repository per domain class, like BookRepository, AuthorRepository, ShelfRepository, like so:
+Instead, we should have a separate repository per domain class, like BookRepository, AuthorRepository, ShelfRepository, like so:
  ```csharp
 public class BookRepository() 
 {
