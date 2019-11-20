@@ -12,5 +12,5 @@
 * [Specification](patterns/specification.md)
 * [Chain of responsibility](patterns/chain-of-responsibility.md)
 * [Strategy](patterns/stategy.md)
-* [Instructions for presenters](instructions-for-presenters.md)
+* [Instructions for presenters](patterns/instructions-for-presenters.md)
 
