@@ -6,7 +6,7 @@ description: This is summary from the talk session.
 
 ## ✅Goal
 
-\[Insert you goal here\]James
+\[Insert you goal here\] 
 
 ## 🏛Architecture
 
