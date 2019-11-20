@@ -203,6 +203,7 @@ Facade is similar to Proxy in that both buffer a complex entity and initialize i
 
 {% hint style="info" %}
 The demo is hosted on the next github repository
-{% endhint %}
 [Github Repository]: https://github.com/luandaja/patterns-box/tree/master/demo/Facade/HomeAssistance
+{% endhint %}
+
 
