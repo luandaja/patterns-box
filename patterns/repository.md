@@ -44,12 +44,15 @@ description: This is summary from the talk session.
 ### Not having one repository per domain class
 
 * If we have an application called "National Library", there shouldn't be a repository called:
+
 ```csharp
 public class NationalLibraryRepository() 
 {
 }
 ```
+
 Instead, we should have a separate repository per domain class, like BookRepository, AuthorRepository, ShelfRepository, like so:
+
  ```csharp
 public class BookRepository() 
 {
