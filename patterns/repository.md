@@ -4,9 +4,11 @@ description: This is summary from the talk session.
 
 # Repository
 
-## ✅Goal
+## ✅Goals
 
-\[Insert you goal here\]
+* Make the data appear as if it is just living inside an in memory collection so at business or higher layers it’s unaware of the data access complexity.
+* Increase developers's productivity by enabling them to focus on bussines logic.
+
 
 ## 🏛Architecture
 
@@ -24,49 +26,103 @@ description: This is summary from the talk session.
 
 ## ☢What problems does it solve?
 
-* \[Use a bullet list to describe the problems\]
-* 
+* Duplication of data access code
+* Complex migration from one data source to another
+* Instead of mocking a whole context, we simply mock the method that is being used.
+
 ## ⏲When to use it?
 
-\[Describe conditions to use it\]
-
-{% hint style="info" %}
-\[Use hints to clarify ambiguous cases\]
-{% endhint %}
+* Most applications need to access data from some data source (or multiple) making them prone to duplicate said data access code.
+* Typically data access code is very repetitive and its concern with low level infrastructure details like opening sql connections and managing sql parameters and transactions.
+* Our business layer needs focus on those algorithms that make the business work.
+* We are developing an MVP which we know will change from data source eventually.
+* Improve testability and maintainability.
 
 ## ⚠When not to use it?
 
-\[Describe conditions to avoid them\]
-
-{% hint style="warning" %}
-\[Use warning hints to clarify ambiguous cases\]
-{% endhint %}
+* We have entities that does not make sense to allow full CRUD operations (Can be easily solved by splitting the interface into three: One for reading, one for updating and one for deleting).
 
 ## ‼Common mistakes when implementing
 
-### \[Use heading 2 to summarize the mistake\]
+### Not having one repository per domain class
 
-\[and describe it bellow\]
+* If we have an application called "National Library", there shouldn't be a repository called:
+```csharp
+public class NationalLibraryRepository() 
+{
+}
+```
+  Instead, we should have a separate repository per domain class, like BookRepository, AuthorRepository, ShelfRepository.
+* A repository method shouldn't return view models or DTOs. Mapping a domian object into a view model/DTO should be the responsibility of a higher level layer like a Service or the Controller.
+
+### Returning view models or DTOs
+
+* A repository method shouldn't return view models or DTOs. Mapping a domian object into a view model/DTO should be the responsibility of a higher level layer like a Service or the Controller.
+
+### Methods that return IQueryable<T> type
+
+* Unless it's a private method, none of the methods on a repository should return a IQueryable<T> type, always call ToList() or ToArray().
+Take this example:
+```csharp
+var customersByBook = context.Books
+			.Include(o => o.Invoices)
+				.ThenInclude(o => o.Customers)
+			.Where(o => o.BookId == 14);
+```
+We are directly retrieving information from our DbContext, if our repository method returns IQueryable, someone else may compose a query on top of it, like so:
+```csharp
+var customersByBook = repository.GetBooks()
+			.Include(o => o.Invoices)
+				.ThenInclude(o => o.Customers)
+			.Where(o => o.BookId == 14);
+```
+The only difference between these two examples is the first line were the method GetBooks is being called, so we are not solving the problem of hidding the complexity from that layer. Instead what we should have is something like this:
+```csharp
+var customersByBook = repository.GetCustomersByBookId(14);
+```
+Were GetCustomersByBook returns a list rather than a IQueryable.
+
+### Thinking that a repository should manage transactions
+
+* The repository is NOT responsible for managing database transactions. This concern is best managed using Unit Of Work pattern.
+
+### Not properly testing the repository
+
+* Every method of our repositories should be covered by one or more integration tests, which should use the same kind of DB that we use in production environment.
 
 ## 🎭Effects
 
 ### Advantages
 
-* \[Describe as bullet list\]
-
-### Disadvantages 
-
-* \[Describe as bullet list\]
+* Improved testability
+* Segragation of responsability
 
 ### Drawbacks
 
-#### \[Use heading 3 to summarize\]
+#### Over time it may accumulate very similar Find methods
 
-\[describe it\]
+* Over long periods of times, a repository may accumulate dozens and dozens of very similar Find methods. This can be solved using the Query Object Pattern or the Builder Pattern or, for bigger repositories, CQRS Pattern.
 
-{% hint style="info" %}
-Use a hint to describe the suggested solution
-{% endhint %}
+#### Wrong placing of business logic
+
+* Unwanted migration of the business logic into query definitions. For example:
+
+```csharp
+public IEnumerable<Order> FindActiveOrders() {
+  return base.FindAll()
+          .Where(order => order.State != OrderState.Closed 
+                       && order.State != OrderState.Canceled)
+          .ToArray();
+}
+```
+This contains a piece of business logic that describes what it means for an order to be active. What we need here is the Specification Pattern, which will look similar to:
+
+```csharp
+public IEnumerable<Order> FindActiveOrders() {
+  return base.FindBySpec(new ActiveOrders())
+          .ToArray();
+}
+```
 
 ## Demo 
 
