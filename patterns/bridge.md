@@ -12,7 +12,7 @@ The Bridge pattern seeks to decouple an abstraction from its implementation such
 
 Let's consider a basic scenario of making the payment related to the bonos in a company. We could have the following scenarios:
 
-![](.gitbook/assets/Bridge1.PNG)
+![](.gitbook/assets/Bridge1.JGP)
 
 There is a possibility that new requirements comes, like:
 
@@ -42,7 +42,7 @@ Let's consider the example we saw in the previous point. Having in mind the dime
 * The _**Bonos**_ would be the _**Implementation**_ that will expose a GetRemuneration\(\) method.
 * Finally, the _**Achieved Goals**_, _**Extra Hours**_, etc would be the _**Concrete Implementations**_ that will have to implement the GetRemuneration\(\) method to retrieve the amount of money to be paid.
 
-![](.gitbook/assets/Bridge2.PNG)
+![](.gitbook/assets/Bridge2.JPG)
 
 ## ☢What problems does it solve?
 
