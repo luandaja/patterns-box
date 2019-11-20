@@ -17,7 +17,7 @@ Two keywords to help us understand this pattern are:
 
 ## 🏛Architecture
 
-![](https://github.com/luandaja/patterns-box/tree/a442c4e7457127107633035c56fd214ebe9257bd/patterns/.gitbook/assets/facade2.jpg)
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/facade2.jpg)
 
 Let’s take an common situation where facade pattern is being applied. Customers on a restaurant order food from the menu, then the order goes to the kitchen and food comes back after a while  
 Customers doesn’t need to know and don't care about the details happening inside the ktichen like who will cut the vegetables, how to prepare the meat or who is going to wash the dishes.  
@@ -29,11 +29,11 @@ So, translating our example to an architecture diagram we have:
 2. The menu is the facade that hides all the complexity of the subsystems making them easier to be consumed by the clients
 3. All the roles in the kitchen are the subsystems that are hidden from the client
 
-![](https://github.com/luandaja/patterns-box/tree/a442c4e7457127107633035c56fd214ebe9257bd/patterns/.gitbook/assets/facade.jpg)
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/facade.jpg)
 
 ## 🌎Real case example
 
-![](https://github.com/luandaja/patterns-box/tree/a442c4e7457127107633035c56fd214ebe9257bd/patterns/.gitbook/assets/facade3.jpg)
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/facade3.jpg)
 
 Let’s think on another case where this pattern is applied.  
 We have a lot of applications we frequently use as Calendar, Spotify, Netflix and so many others.  
