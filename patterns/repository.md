@@ -9,7 +9,6 @@ description: This is summary from the talk session.
 * Make the data appear as if it is just living inside an in memory collection so at business or higher layers it’s unaware of the data access complexity.
 * Increase developers's productivity by enabling them to focus on bussines logic.
 
-
 ## 🏛Architecture
 
 {% hint style="info" %}
@@ -28,19 +27,17 @@ description: This is summary from the talk session.
 
 * Duplication of data access code
 * Complex migration from one data source to another
-* Instead of mocking a whole context, we simply mock the method that is being used.
+* Typically data access code is very repetitive and its concern with low level infrastructure details like opening sql connections and managing sql parameters and transactions.
 
 ## ⏲When to use it?
 
-* Most applications need to access data from some data source (or multiple) making them prone to duplicate said data access code.
-* Typically data access code is very repetitive and its concern with low level infrastructure details like opening sql connections and managing sql parameters and transactions.
-* Our business layer needs focus on those algorithms that make the business work.
-* We are developing an MVP which we know will change from data source eventually.
-* Improve testability and maintainability.
+* When our application needs to access data from multiple data sources making it prone to duplication of code.
+* When our business layer needs focus on those algorithms that make the business work.
+* When we are developing an MVP which we know will change from data source eventually.
 
 ## ⚠When not to use it?
 
-* We have entities that does not make sense to allow full CRUD operations (Can be easily solved by splitting the interface into three: One for reading, one for updating and one for deleting).
+* When we have entities for which doesn't make sense to allow full CRUD operations (Can be easily solved by splitting the interface into three: One for reading, one for updating and one for deleting).
 
 ## ‼Common mistakes when implementing
 
@@ -53,11 +50,10 @@ public class NationalLibraryRepository()
 }
 ```
   Instead, we should have a separate repository per domain class, like BookRepository, AuthorRepository, ShelfRepository.
-* A repository method shouldn't return view models or DTOs. Mapping a domian object into a view model/DTO should be the responsibility of a higher level layer like a Service or the Controller.
 
 ### Returning view models or DTOs
 
-* A repository method shouldn't return view models or DTOs. Mapping a domian object into a view model/DTO should be the responsibility of a higher level layer like a Service or the Controller.
+* A repository method shouldn't return view models or DTOs. Mapping a domian object into a view model/DTO should be the responsibility of a higher level layer like a Service or a Controller.
 
 ### Methods that return IQueryable<T> type
 
@@ -94,8 +90,9 @@ Were GetCustomersByBook returns a list rather than a IQueryable.
 
 ### Advantages
 
-* Improved testability
-* Segragation of responsability
+* Business logic can be unit tested without data access logic.
+* The database access code can be reused.
+* It gives a substitution point for the unit tests.
 
 ### Drawbacks
 
@@ -123,6 +120,12 @@ public IEnumerable<Order> FindActiveOrders() {
           .ToArray();
 }
 ```
+
+## References
+
+* https://programmingwithmosh.com/net/common-mistakes-with-the-repository-pattern/
+* https://marcin-chwedczuk.github.io/repository-pattern-my-way
+* Pluralsight Design Patterns Libraty
 
 ## Demo 
 
