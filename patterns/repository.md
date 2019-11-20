@@ -49,7 +49,20 @@ public class NationalLibraryRepository()
 {
 }
 ```
-  Instead, we should have a separate repository per domain class, like BookRepository, AuthorRepository, ShelfRepository.
+  Instead, we should have a separate repository per domain class, like BookRepository, AuthorRepository, ShelfRepository, like so:
+ ```csharp
+public class BookRepository() 
+{
+}
+
+public class AuthorRepository() 
+{
+}
+
+public class ShelfRepository() 
+{
+}
+```
 
 ### Returning view models or DTOs
 
