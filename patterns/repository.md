@@ -37,7 +37,7 @@ description: This is summary from the talk session.
 
 ## ⚠When not to use it?
 
-* When we have entities for which doesn't make sense to allow full CRUD operations (Can be easily solved by splitting the interface into three: One for reading, one for updating and one for deleting).
+* When we have entities for which doesn't make sense to allow full CRUD operations \(Can be easily solved by splitting the interface into three: One for reading, one for updating and one for deleting\).
 
 ## ‼Common mistakes when implementing
 
@@ -45,28 +45,27 @@ description: This is summary from the talk session.
 
 * If we have an application called "National Library", there shouldn't be a repository called:
 
-```csharp
-public class NationalLibraryRepository() 
-{
-}
-```
+  ```csharp
+  public class NationalLibraryRepository() 
+  {
+  }
+  ```
 
-Instead, we should have a separate repository per domain class, like BookRepository, AuthorRepository, ShelfRepository, like so:
+  Instead, we should have a separate repository per domain class, like BookRepository, AuthorRepository, ShelfRepository, like so:
 
-```csharp
-public class BookRepository() 
-{
-}
+  \`\`\`csharp
 
-public class AuthorRepository() 
-{
-}
+  public class BookRepository\(\) 
 
-public class ShelfRepository() 
-{
-}
-```
+  {
 
+  }
+
+public class AuthorRepository\(\) { }
+
+public class ShelfRepository\(\) { }
+
+```text
 ### Returning view models or DTOs
 
 * A repository method shouldn't return view models or DTOs. Mapping a domian object into a view model/DTO should be the responsibility of a higher level layer like a Service or a Controller.
@@ -77,21 +76,26 @@ public class ShelfRepository()
 Take this example:
 ```csharp
 var customersByBook = context.Books
-			.Include(o => o.Invoices)
-				.ThenInclude(o => o.Customers)
-			.Where(o => o.BookId == 14);
+            .Include(o => o.Invoices)
+                .ThenInclude(o => o.Customers)
+            .Where(o => o.BookId == 14);
 ```
+
 We are directly retrieving information from our DbContext, if our repository method returns IQueryable, someone else may compose a query on top of it, like so:
+
 ```csharp
 var customersByBook = repository.GetBooks()
-			.Include(o => o.Invoices)
-				.ThenInclude(o => o.Customers)
-			.Where(o => o.BookId == 14);
+            .Include(o => o.Invoices)
+                .ThenInclude(o => o.Customers)
+            .Where(o => o.BookId == 14);
 ```
+
 The only difference between these two examples is the first line were the method GetBooks is being called, so we are not solving the problem of hidding the complexity from that layer. Instead what we should have is something like this:
+
 ```csharp
 var customersByBook = repository.GetCustomersByBookId(14);
 ```
+
 Were GetCustomersByBook returns a list rather than a IQueryable.
 
 ### Thinking that a repository should manage transactions
@@ -128,6 +132,7 @@ public IEnumerable<Order> FindActiveOrders() {
           .ToArray();
 }
 ```
+
 This contains a piece of business logic that describes what it means for an order to be active. What we need here is the Specification Pattern, which will look similar to:
 
 ```csharp
@@ -139,11 +144,11 @@ public IEnumerable<Order> FindActiveOrders() {
 
 ## References
 
-* https://programmingwithmosh.com/net/common-mistakes-with-the-repository-pattern/
-* https://marcin-chwedczuk.github.io/repository-pattern-my-way
+* [https://programmingwithmosh.com/net/common-mistakes-with-the-repository-pattern/](https://programmingwithmosh.com/net/common-mistakes-with-the-repository-pattern/)
+* [https://marcin-chwedczuk.github.io/repository-pattern-my-way](https://marcin-chwedczuk.github.io/repository-pattern-my-way)
 * Pluralsight Design Patterns Libraty
 
-## Demo 
+## Demo
 
 {% hint style="info" %}
 The demo is hosted on the next github repository
