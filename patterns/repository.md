@@ -93,7 +93,7 @@ The only difference between these two examples is the first line were the method
 ```csharp
 var invoicesByBook = repository.GetInvoicesByBookId(14);
 ```
-Were GetCustomersByBook returns a list rather than a IQueryable.
+Were GetInvoicesByBookId returns a list rather than a IQueryable.
 
 ### Thinking that a repository should manage transactions
 
