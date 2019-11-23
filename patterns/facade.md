@@ -17,7 +17,7 @@ Two keywords to help us understand this pattern are:
 
 ## 🏛Architecture
 
-![](.gitbook/assets/facade2.jpg)
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/facade2.jpg)
 
 Let’s take an common situation where facade pattern is being applied. Customers on a restaurant order food from the menu, then the order goes to the kitchen and food comes back after a while  
 Customers doesn’t need to know and don't care about the details happening inside the ktichen like who will cut the vegetables, how to prepare the meat or who is going to wash the dishes.  
@@ -29,29 +29,29 @@ So, translating our example to an architecture diagram we have:
 2. The menu is the facade that hides all the complexity of the subsystems making them easier to be consumed by the clients
 3. All the roles in the kitchen are the subsystems that are hidden from the client
 
-![](.gitbook/assets/facade.jpg)
-
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/facade.jpg)
 
 ## 🌎Real case example
-![](.gitbook/assets/facade3.jpg)
+
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/facade3.jpg)
 
 Let’s think on another case where this pattern is applied.  
 We have a lot of applications we frequently use as Calendar, Spotify, Netflix and so many others.  
 We also have Google Assistant app, which let us interact with all the other apps in a simplified way by creating routines.  
 When we setup a routine on google home assistant it can involve, turn on the lights with Legrand app, play some spotify playlist, read the news, and so on without having to open each application. All that complexity is hidden from us by using the google assistant app.  
-Google assistant makes easier for the clients \(as google home speaker or mobile phone\) to interact with our applications. 
+Google assistant makes easier for the clients \(as google home speaker or mobile phone\) to interact with our applications.
 
 Therefore Google assistant is serving as a facade which makes easier for the clients to interact with subsystems hiding all that complexity.
 
 ## ☢What problems does it solve?
 
 {% hint style="success" %}
-**Reduces the learning curve of the subsystem.**   
+**Reduces the learning curve of the subsystem.**  
 Clients don't need to fully understand what the subsystem is doing so we are taking down the learning curve.
 {% endhint %}
 
 {% hint style="success" %}
-**Makes a subsystem easier to use by wrapping it.**   
+**Makes a subsystem easier to use by wrapping it.**  
 We provide a much more easier and friendlier way to consume the subsystems by hiding the complexity inside the facade.
 {% endhint %}
 
@@ -117,7 +117,7 @@ Facade will limit the features and flexibility that subsystems can offer.
 ## ‼Common mistakes when implementing
 
 {% hint style="danger" %}
-**Creating unnecessary facades.**   
+**Creating unnecessary facades.**  
 When we apply this pattern just for the sake of create a facade layer instead of assess deeply wheter applying it is adding real value to our design. Keeping in mind YAGNI and KISS principles will help us.
 {% endhint %}
 
@@ -128,7 +128,7 @@ Facade layer should not be forced and its always optional. If the client wishes 
 
 {% hint style="danger" %}
 **Create facade layer for simple calls**  
-Imagine facade with methods that has only one or two lines which calls the other subsystems. If facade is going to be so simple it invalidates its purpose \(It’s supposed to encapsulate complexity\) and would be better to let clients call directly the subsystems and avoid an unnnecesary layer.reate facade layer for simple calls. 
+Imagine facade with methods that has only one or two lines which calls the other subsystems. If facade is going to be so simple it invalidates its purpose \(It’s supposed to encapsulate complexity\) and would be better to let clients call directly the subsystems and avoid an unnnecesary layer.reate facade layer for simple calls.
 {% endhint %}
 
 {% hint style="danger" %}
@@ -170,7 +170,7 @@ Facade promotes subsystem independence and portability.
 {% endhint %}
 
 {% hint style="success" %}
-Subsystem may be dependent with another one. 
+Subsystem may be dependent with another one.
 {% endhint %}
 
 ### Related Patterns
@@ -187,10 +187,10 @@ Abstract Factory can serve as an alternative to Facade when you only want to hid
 
 {% hint style="info" %}
 **Mediator**  
-Facade and Mediator try to organize collaboration between lots of tightly coupled classes.  
-  
-Facade defines a simplified interface to a subsystem of objects and subsystems are unaware of the facade. Objects within the subsystem can communicate directly.   
-  
+Facade and Mediator try to organize collaboration between lots of tightly coupled classes.
+
+Facade defines a simplified interface to a subsystem of objects and subsystems are unaware of the facade. Objects within the subsystem can communicate directly.
+
 Mediator centralizes communication between components of the system. Components only know about the mediator object and don’t communicate directly.
 {% endhint %}
 
@@ -199,11 +199,9 @@ Mediator centralizes communication between components of the system. Components 
 Facade is similar to Proxy in that both buffer a complex entity and initialize it on its own. Unlike Facade, Proxy has the same interface as its service object, which makes them interchangeable.
 {% endhint %}
 
-## Demo 
+## Demo
 
 {% hint style="info" %}
-The demo is hosted on the next github repository
+The demo is hosted on the next github repository \[Github Repository\]: [https://github.com/luandaja/patterns-box/tree/master/demo/Facade/HomeAssistance](https://github.com/luandaja/patterns-box/tree/master/demo/Facade/HomeAssistance)
 {% endhint %}
-
-\[Link here\]
 
