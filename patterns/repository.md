@@ -55,6 +55,21 @@ public class NationalLibraryRepository()
 
 * A repository method shouldn't return view models or DTOs. Mapping a domian object into a view model/DTO should be the responsibility of a higher level layer like a Service or a Controller.
 
+```csharp
+
+//Do not use
+public BookViewModel GetBookById() 
+{
+}
+
+//Use Instead
+public Book GetBookById() 
+{
+}
+```
+
+Where Book class is a Context model.
+
 ### Methods that return IQueryable<T> type
 
 * Unless it's a private method, none of the methods on a repository should return a IQueryable<T> type, always call ToList() or ToArray().
