@@ -58,13 +58,15 @@ public class NationalLibraryRepository()
 ```csharp
 
 //Do not use
-public BookViewModel GetBookById() 
+public BookViewModel GetBookById(int id) 
 {
+  //Code that maps from context model to view model
 }
 
 //Use Instead
-public Book GetBookById() 
+public Book GetBookById(int id) 
 {
+  //Code that only retrieves data
 }
 ```
 
