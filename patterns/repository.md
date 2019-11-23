@@ -77,21 +77,21 @@ Where Book class is a Context model.
 * Unless it's a private method, none of the methods on a repository should return a IQueryable<T> type, always call ToList() or ToArray().
 Take this example:
 ```csharp
-var customersByBook = context.Books
+var invoicesByBook = context.Books
 			.Include(o => o.Invoices)
-				.ThenInclude(o => o.Customers)
-			.Where(o => o.BookId == 14);
+			.Where(o => o.BookId == 14)
+      .Select(o => o.Invoices);
 ```
 We are directly retrieving information from our DbContext, if our repository method returns IQueryable, someone else may compose a query on top of it, like so:
 ```csharp
-var customersByBook = repository.GetBooks()
+var invoicesByBook = repository.GetBooks()
 			.Include(o => o.Invoices)
-				.ThenInclude(o => o.Customers)
-			.Where(o => o.BookId == 14);
+			.Where(o => o.BookId == 14)
+      .Select(o => o.Invoices);
 ```
 The only difference between these two examples is the first line were the method GetBooks is being called, so we are not solving the problem of hidding the complexity from that layer. Instead what we should have is something like this:
 ```csharp
-var customersByBook = repository.GetCustomersByBookId(14);
+var invoicesByBook = repository.GetInvoicesByBookId(14);
 ```
 Were GetCustomersByBook returns a list rather than a IQueryable.
 
@@ -142,7 +142,7 @@ public IEnumerable<Order> FindActiveOrders() {
 
 * https://programmingwithmosh.com/net/common-mistakes-with-the-repository-pattern/
 * https://marcin-chwedczuk.github.io/repository-pattern-my-way
-* Pluralsight Design Patterns Libraty
+* Pluralsight Design Patterns Library
 
 ## Demo 
 
