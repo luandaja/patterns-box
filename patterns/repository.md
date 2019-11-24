@@ -95,13 +95,100 @@ var invoicesByBook = repository.GetInvoicesByBookId(14);
 ```
 Were GetInvoicesByBookId returns a list rather than a IQueryable.
 
-### Thinking that a repository should manage transactions
+### Thinking a repository should manage transactions
 
 * The repository is NOT responsible for managing database transactions. This concern is best managed using Unit Of Work pattern.
 
+Without UnitOfWork Pattern:
+
+```csharp
+public class AuthorRepository : IAuthorRepository
+{
+  public void Update(Author entity){
+    _context.Update(entity);
+    _context.SaveChanges();
+  }
+}
+public class BookRepository : IBookRepository
+{
+  public void Add(Author entity){
+    _context.Update(entity);
+    _context.SaveChanges();
+  }
+}
+
+public class LibraryService
+{
+  private readonly IAuthorRepository _authorRepository;
+  private readonly IBookRepository _bookRepository;
+
+  //Constructor where injection is done
+  //...
+
+  public void ExampleMethod(){
+    //...some logic
+    _authorRepository.Update(author);
+    //author gets updated
+    _bookRepository.Add(newBook);
+    //new book is saved
+  }
+}
+```
+
+With UnitOfWork Pattern:
+
+```csharp
+public class AuthorRepository : IAuthorRepository
+{
+  public void Update(Author entity){
+    _context.Update(entity);
+}
+public class BookRepository : IBookRepository
+{
+  public void Add(Author entity){
+    _context.Update(entity);
+  }
+}
+public class UnitOfWork : IUnitOfWork
+{
+  private ContextDb _context;
+
+  //Constructor where injection is done
+
+  public AuthorRepository Authors { get; private set;}
+  public BookRepository Books { get; private set; }
+
+  public void Commit(){
+    _context.SaveChanges();
+  }
+
+}
+
+public class LibraryService
+{
+  private readonly IUnitOfWork _unitOfWork
+
+  //Constructor where injection is done
+  //...
+
+  public void ExampleMethod(){
+
+    //...some logic
+
+    _unitOfWork.Authors.Update(author);
+    //author is not updated yet
+    _unitOfWork.Books.Add(newBook);
+    //new book is not saved yet
+    _unitOfWork.Commit();
+    //Both changes are saved together
+
+  }
+}
+```
+
 ### Not properly testing the repository
 
-* Every method of our repositories should be covered by one or more integration tests, which should use the same kind of DB that we use in production environment.
+* Every method of our repositories should be covered by one or more integration tests, which should use the same kind of DB we use in production environment.
 
 ## 🎭Effects
 
@@ -129,7 +216,7 @@ public IEnumerable<Order> FindActiveOrders() {
           .ToArray();
 }
 ```
-This contains a piece of business logic that describes what it means for an order to be active. What we need here is the Specification Pattern, which will look similar to:
+This contains a piece of business logic which describes what it means for an order to be active. What we need here is the Specification Pattern, which will look similar to:
 
 ```csharp
 public IEnumerable<Order> FindActiveOrders() {
