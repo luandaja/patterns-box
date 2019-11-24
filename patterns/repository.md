@@ -145,7 +145,7 @@ public class AuthorRepository : IAuthorRepository
 }
 public class BookRepository : IBookRepository
 {
-  public void Add(Author entity){
+  public void Add(Book entity){
     _context.Update(entity);
   }
 }
@@ -205,11 +205,11 @@ public class LibraryService
 
 ```csharp
 public interface IBookRepository{
-  List<Books> GetBook();
-  List<Books> GetBookByAuthorId();
-  List<Books> GetBookByPublisherId();
-  List<Books> GetBook();
-  List<Books> GetBookForUpdate();
+  Book GetBook();
+  Book GetBookByAuthorId();
+  Book GetBookByPublisherId();
+  Book GetBook();
+  Book GetBookForUpdate();
 }
 ```
 
