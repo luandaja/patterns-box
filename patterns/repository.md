@@ -181,7 +181,7 @@ public class LibraryService
     _unitOfWork.Books.Add(newBook);
     //new book is not saved yet
     _unitOfWork.Commit();
-    //Both changes are saved together
+    //Both operations are saved together
 
   }
 }
