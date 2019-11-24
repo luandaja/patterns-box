@@ -111,7 +111,7 @@ public class AuthorRepository : IAuthorRepository
 }
 public class BookRepository : IBookRepository
 {
-  public void Add(Author entity){
+  public void Add(Book entity){
     _context.Update(entity);
     _context.SaveChanges();
   }
@@ -154,6 +154,7 @@ public class UnitOfWork : IUnitOfWork
   private ContextDb _context;
 
   //Constructor where injection is done
+  //and repositories are initialized
 
   public AuthorRepository Authors { get; private set;}
   public BookRepository Books { get; private set; }
