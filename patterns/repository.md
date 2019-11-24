@@ -203,6 +203,16 @@ public class LibraryService
 
 #### Over time it may accumulate very similar Find methods
 
+```csharp
+public interface IBookRepository{
+  List<Books> GetBook();
+  List<Books> GetBookByAuthorId();
+  List<Books> GetBookByPublisherId();
+  List<Books> GetBook();
+  List<Books> GetBookForUpdate();
+}
+```
+
 * Over long periods of times, a repository may accumulate dozens and dozens of very similar Find methods. This can be solved using the Query Object Pattern or the Builder Pattern or, for bigger repositories, CQRS Pattern.
 
 #### Wrong placing of business logic
