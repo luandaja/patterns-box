@@ -5,7 +5,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Repository;
-using Repository.SqlServer;
+using Sql = Repository.SqlServer;
+using Csv = Repository.Csv;
+using System.IO;
 
 namespace RepositoryDemo
 {
@@ -21,9 +23,20 @@ namespace RepositoryDemo
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddDbContext<SqlDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("sqlserver")));
-            services.AddTransient<IBookRepository, BookRepository>();
+
+            #region SQL Injections
+
+            //services.AddDbContext<Sql.SqlDbContext>(options =>
+            //    options.UseSqlServer(Configuration.GetConnectionString("sqlserver")));
+            //services.AddTransient<IBookRepository, Sql.BookRepository>();
+
+            #endregion
+
+            #region CSV Injections
+
+            services.AddTransient<IBookRepository>(x => new Csv.BookRepository($"{Directory.GetCurrentDirectory()}\\CsvFiles\\Books.csv"));
+
+            #endregion
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

@@ -26,7 +26,7 @@ namespace Repository.Csv
 
         #region Not Implemented
 
-        public T GetById(int id)
+        public virtual T GetById(int id)
         {
             throw new NotImplementedException();
         }

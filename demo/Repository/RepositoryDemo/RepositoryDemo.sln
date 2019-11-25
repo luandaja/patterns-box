@@ -3,21 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29509.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{E3D7DEEF-7681-4AE5-BA73-66B55F76C32D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{E3D7DEEF-7681-4AE5-BA73-66B55F76C32D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WithRepository", "WithRepository", "{03CB6C10-92C7-48CB-AB96-77DF300EB171}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "Repository\Repository.csproj", "{43FDA728-3E38-4AB3-97D1-2EC99752664B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WithoutRepository", "WithoutRepository", "{2A186EC6-59A9-4128-BC5B-B82B62487819}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.SqlServer", "Repository.SqlServer\Repository.SqlServer.csproj", "{998B80A1-6206-4893-938C-C96B5C728E28}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository", "Repository\Repository.csproj", "{43FDA728-3E38-4AB3-97D1-2EC99752664B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RepositoryDemo", "RepositoryDemo\RepositoryDemo.csproj", "{28877985-72E1-42C2-BF6A-509AEF7DC229}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.SqlServer", "Repository.SqlServer\Repository.SqlServer.csproj", "{998B80A1-6206-4893-938C-C96B5C728E28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository.Csv", "Repository.Csv\Repository.Csv.csproj", "{601382F2-74CC-48B6-80E7-7EE94A1FC4C1}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Database", "Database", "{710A83E6-F114-402D-8526-EBE4CDEA3899}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8F956B97-E74D-4778-AABB-C9C9DA473716}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryDemo", "RepositoryDemo\RepositoryDemo.csproj", "{28877985-72E1-42C2-BF6A-509AEF7DC229}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Repository.Csv", "Repository.Csv\Repository.Csv.csproj", "{601382F2-74CC-48B6-80E7-7EE94A1FC4C1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepositoryDemo.Tests", "RepositoryDemo.Tests\RepositoryDemo.Tests.csproj", "{6BBD0358-09CB-4868-9977-187BB9FB4DA1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,9 +43,16 @@ Global
 		{601382F2-74CC-48B6-80E7-7EE94A1FC4C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{601382F2-74CC-48B6-80E7-7EE94A1FC4C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{601382F2-74CC-48B6-80E7-7EE94A1FC4C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6BBD0358-09CB-4868-9977-187BB9FB4DA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6BBD0358-09CB-4868-9977-187BB9FB4DA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6BBD0358-09CB-4868-9977-187BB9FB4DA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6BBD0358-09CB-4868-9977-187BB9FB4DA1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{6BBD0358-09CB-4868-9977-187BB9FB4DA1} = {8F956B97-E74D-4778-AABB-C9C9DA473716}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E4FA4474-05B4-45C6-8267-BABFCA6ED1A9}

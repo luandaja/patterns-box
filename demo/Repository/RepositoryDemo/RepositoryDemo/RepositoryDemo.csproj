@@ -9,6 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Repository.Csv\Repository.Csv.csproj" />
     <ProjectReference Include="..\Repository.SqlServer\Repository.SqlServer.csproj" />
   </ItemGroup>
 
