@@ -15,13 +15,20 @@ namespace Repository.Csv
             _filePath = filePath;
         }
 
-        public T GetById(int id)
+        public IEnumerable<T> GetList()
         {
             using (TextReader fileReader = File.OpenText(_filePath))
             {
                 var csv = new CsvReader(fileReader);
-                return csv.GetRecords<T>().AsQueryable();
+                return csv.GetRecords<T>().ToList();
             }
+        }
+
+        #region Not Implemented
+
+        public T GetById(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public void Add(T entity)
@@ -34,14 +41,11 @@ namespace Repository.Csv
             throw new NotImplementedException();
         }
 
-        public IEnumerable<T> GetList()
-        {
-            throw new NotImplementedException();
-        }
-
         public void Update(T entity)
         {
             throw new NotImplementedException();
         }
+
+        #endregion
     }
 }

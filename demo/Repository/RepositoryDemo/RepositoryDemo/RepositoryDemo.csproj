@@ -12,4 +12,8 @@
     <ProjectReference Include="..\Repository.SqlServer\Repository.SqlServer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CsvFiles\" />
+  </ItemGroup>
+
 </Project>
