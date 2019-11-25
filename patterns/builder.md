@@ -79,17 +79,17 @@ Because real the purpose of the pattern is to reuse the building logic with diff
 
 ## ‼Common mistakes when implementing
 
-{% hint style="success" %}
+{% hint style="danger" %}
 **Forcing the pattern.**  
 Force to apply the pattern when you don’t need it. For instance, when you only have one parameter in the construction of the object.
 {% endhint %}
 
-{% hint style="success" %}
+{% hint style="danger" %}
 **Apply the pattern when you are not sure it will be worth it.**  
 This one is very important. The developer may want to implement the pattern considering it will provide a huge benefit in a possible future requirement. However, it is not a fact that it will happen. In this case, we may end up having extra flexibility that will not be used. We can have in mind the YAGNI principle (which means “you aren’t gonna need it”). This principle states that a developer shouldn’t add any additional functionality until it is needed.
 {% endhint %}
 
-{% hint style="success" %}
+{% hint style="danger" %}
 **Products don’t have an inheritance hierarchy.**  
 So you could possible have this but in general in this pattern  it doesn’t say that you must, what’s really happening here is that you are getting different data. People often try to make a hierarchy of  Products and you are having one type of thing but you’re having different type of data for it and that’s really why Builder is design to do.
 {% endhint %}
@@ -120,7 +120,7 @@ Also, it is easier to test each of this classes since they are separated and foc
 
 ### Disadvantages 
 
-{% hint style="success" %}
+{% hint style="danger" %}
 **More complicated code by applying the pattern.**  
 This aspect is very important to consider when implementing the pattern. It is easier to keep duplicating the functionality when it is very similar. But when implementing the pattern, you change that ease for an organized, well structured, scalable and testable app. But at the end, you are losing ease in exchange of a complicated code.
 {% endhint %}
