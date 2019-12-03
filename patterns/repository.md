@@ -247,8 +247,5 @@ public IEnumerable<Order> FindActiveOrders() {
 ## Demo 
 
 {% hint style="info" %}
-The demo is hosted on the next github repository
+The demo is hosted on the next github repository \[Github Repository\]: [https://github.com/luandaja/patterns-box/tree/master/demo/Repository/RepositoryDemo](https://github.com/luandaja/patterns-box/tree/master/demo/Repository/RepositoryDemo)
 {% endhint %}
-
-\[Link here\]
-
