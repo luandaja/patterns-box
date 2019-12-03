@@ -15,7 +15,7 @@ description: This is summary from the talk session.
 
 ## 🌎Real case example
 
-Picture the next escenario:
+Picture the next scenario:
 
 1. As part of the process of buying a new home, the seller requests several documents, some of which are only delivered by a couple of goberment institutions.
 2. Unfortunately the process of requesting these documents to these institutions is very time comsuming and complex. 
