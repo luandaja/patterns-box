@@ -11,17 +11,19 @@ description: This is summary from the talk session.
 
 ## 🏛Architecture
 
-{% hint style="info" %}
-\[If needed add notes here\]
-{% endhint %}
-
-\[Insert an image to describe the expected architecture\]
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/repository_architecture.png)
 
 ## 🌎Real case example
 
-\[Describe your case\]
+Picture the next escenario:
 
-\[Add an image to support your text\]
+1. As part of the process of buying a new home, the seller requests several documents, some of which are only delivered by a couple of goberment institutions.
+2. Unfortunately the process of requesting these documents to these institutions is very time comsuming and complex. 
+3. Soon we realized that it's better to hand over these responsability to someone else, an accountant or legal consultant, which we hire.
+4. This person will easly and happily finish requesting every needed document from the goberment institutions.
+5. Finally he/she will hand us over said documents so we can deliver them to the seller and continue the buying process.
+
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/repository_real_world_case.png)
 
 ## ☢What problems does it solve?
 
