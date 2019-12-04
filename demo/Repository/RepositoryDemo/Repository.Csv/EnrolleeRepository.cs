@@ -21,9 +21,11 @@ namespace Repository.Csv
             }
         }
 
+        #region Not Implemented
         public bool IsActive(int enrolleeId)
         {
             throw new System.NotImplementedException();
         }
+        #endregion
     }
 }
