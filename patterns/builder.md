@@ -26,14 +26,14 @@ So basically we create a concrete builder, we give it to the Director and  this 
 
 ## 🌎Real case example
 
-Image 1
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/builder1.png)
 
 So, lets start digging into this pattern with a basic example of buying a sandwich
 
 So on and so for,  i’m sure that if you go for a sandwich it could be annoying to answer all this questions and we often just pick a number of the menu and so this is a kind 
 of example of code you may have that has all extra dialog and maybe you’ve  thought well i can put all in a constructor and so you gave a large constructor where you pass in all these parameters.
 
-Image 2
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/builder2.png)
 
 So, this dialog is much shorter, so this kind of scenario that might not really happen in a real sandwich shop, but it would be pretty efficient if it did,
 so the basic idea here is that you’re only Providing data.  you are not going to the sandwich shop in this case and you are not saying 
