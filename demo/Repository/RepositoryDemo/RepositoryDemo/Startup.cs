@@ -26,15 +26,15 @@ namespace RepositoryDemo
 
             #region SQL Injections
 
-            //services.AddDbContext<Sql.SqlDbContext>(options =>
-            //    options.UseSqlServer(Configuration.GetConnectionString("sqlserver")));
-            //services.AddTransient<IBookRepository, Sql.BookRepository>();
+            services.AddDbContext<Sql.EnterpriseDbContext>(options =>
+                options.UseSqlServer(Configuration.GetConnectionString("sqlserver")));
+            services.AddTransient<IEnrolleeRepository, Sql.EnrolleeRepository>();
 
             #endregion
 
             #region CSV Injections
 
-            services.AddTransient<IBookRepository>(x => new Csv.BookRepository($"{Directory.GetCurrentDirectory()}\\CsvFiles\\Books.csv"));
+            //services.AddTransient<IEnrolleeRepository>(x => new Csv.EnrolleeRepository($"{Directory.GetCurrentDirectory()}\\CsvFiles\\Enrollees.csv"));
 
             #endregion
         }

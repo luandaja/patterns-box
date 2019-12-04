@@ -1,20 +1,16 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0-preview3.19554.8" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Repository.Csv\Repository.Csv.csproj" />
     <ProjectReference Include="..\Repository.SqlServer\Repository.SqlServer.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="CsvFiles\" />
   </ItemGroup>
 
 </Project>

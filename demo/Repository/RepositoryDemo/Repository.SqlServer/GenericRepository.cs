@@ -6,8 +6,8 @@ namespace Repository.SqlServer
 {
     public abstract class GenericRepository<T> : IDisposable, IGenericRepository<T> where T : class
     {
-        protected readonly SqlDbContext _context;
-        protected GenericRepository(SqlDbContext context)
+        protected readonly EnterpriseDbContext _context;
+        protected GenericRepository(EnterpriseDbContext context)
         {
             _context = context;
         }
