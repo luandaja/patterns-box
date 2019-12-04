@@ -43,13 +43,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClubSandwichBuilder.cs" />
-    <Compile Include="BaconSandwichBuilder.cs" />
+    <Compile Include="Builder\ClubSandwichBuilder.cs" />
+    <Compile Include="Builder\BaconSandwichBuilder.cs" />
+    <Compile Include="Enumerables\MeatType.cs" />
+    <Compile Include="Enumerables\ChesseType.cs" />
+    <Compile Include="Enumerables\BreadType.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sandwich.cs" />
     <Compile Include="SandwichBuilder.cs" />
-    <Compile Include="SandwichMaker.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
