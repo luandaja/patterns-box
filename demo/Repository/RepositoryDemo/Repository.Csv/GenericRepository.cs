@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace Repository.Csv
 {
-    public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
+    public class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         protected readonly string _filePath;
 

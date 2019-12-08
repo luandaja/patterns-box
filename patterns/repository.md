@@ -82,14 +82,14 @@ Take this example:
 var invoicesByBook = context.Books
 			.Include(o => o.Invoices)
 			.Where(o => o.BookId == 14)
-      .Select(o => o.Invoices);
+      			.Select(o => o.Invoices);
 ```
 We are directly retrieving information from our DbContext, if our repository method returns IQueryable, someone else may compose a query on top of it, like so:
 ```csharp
 var invoicesByBook = repository.GetBooks()
 			.Include(o => o.Invoices)
 			.Where(o => o.BookId == 14)
-      .Select(o => o.Invoices);
+      			.Select(o => o.Invoices);
 ```
 The only difference between these two examples is the first line were the method GetBooks is being called, so we are not solving the problem of hidding the complexity from that layer. Instead what we should have is something like this:
 ```csharp

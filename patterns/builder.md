@@ -26,14 +26,14 @@ So basically we create a concrete builder, we give it to the Director and  this 
 
 ## 🌎Real case example
 
-Image 1
+![](https://github.com/luandaja/patterns-box/blob/master/patterns/.gitbook/assets/builder1.PNG)
 
 So, lets start digging into this pattern with a basic example of buying a sandwich
 
 So on and so for,  i’m sure that if you go for a sandwich it could be annoying to answer all this questions and we often just pick a number of the menu and so this is a kind 
 of example of code you may have that has all extra dialog and maybe you’ve  thought well i can put all in a constructor and so you gave a large constructor where you pass in all these parameters.
 
-Image 2
+![](https://github.com/luandaja/patterns-box/blob/master/patterns/.gitbook/assets/builder2.PNG)
 
 So, this dialog is much shorter, so this kind of scenario that might not really happen in a real sandwich shop, but it would be pretty efficient if it did,
 so the basic idea here is that you’re only Providing data.  you are not going to the sandwich shop in this case and you are not saying 
@@ -72,7 +72,7 @@ That means when you have to create different kinds of products or objects follow
 
 ## ⚠When not to use it?
 
-{% hint style="success" %}
+{% hint style="danger" %}
 **When there will not be too many “Concrete Builder” implementations.**  
 Because real the purpose of the pattern is to reuse the building logic with different data. if you have only one set of data you are creating an overhead, not getting a lot of value.
 {% endhint %}
@@ -84,15 +84,6 @@ Because real the purpose of the pattern is to reuse the building logic with diff
 Force to apply the pattern when you don’t need it. For instance, when you only have one parameter in the construction of the object.
 {% endhint %}
 
-{% hint style="danger" %}
-**Apply the pattern when you are not sure it will be worth it.**  
-This one is very important. The developer may want to implement the pattern considering it will provide a huge benefit in a possible future requirement. However, it is not a fact that it will happen. In this case, we may end up having extra flexibility that will not be used. We can have in mind the YAGNI principle (which means “you aren’t gonna need it”). This principle states that a developer shouldn’t add any additional functionality until it is needed.
-{% endhint %}
-
-{% hint style="danger" %}
-**Products don’t have an inheritance hierarchy.**  
-So you could possible have this but in general in this pattern  it doesn’t say that you must, what’s really happening here is that you are getting different data. People often try to make a hierarchy of  Products and you are having one type of thing but you’re having different type of data for it and that’s really why Builder is design to do.
-{% endhint %}
 
 ## 🎭Effects
 
@@ -116,13 +107,6 @@ As mentioned before, having the functionalities separated allows an easier way t
 {% hint style="success" %}
 **Testability.**  
 Also, it is easier to test each of this classes since they are separated and focused in a specific task.
-{% endhint %}
-
-### Disadvantages 
-
-{% hint style="danger" %}
-**More complicated code by applying the pattern.**  
-This aspect is very important to consider when implementing the pattern. It is easier to keep duplicating the functionality when it is very similar. But when implementing the pattern, you change that ease for an organized, well structured, scalable and testable app. But at the end, you are losing ease in exchange of a complicated code.
 {% endhint %}
 
 ## Demo 
