@@ -6,7 +6,9 @@ description: This is summary from the talk session.
 
 ## ✅Goal
 
-\[Insert you goal here\]
+* Convert the interface of one class into another interface clients expect.
+* Allow classes to work together that couldn't otherwise due to imcompatible interfaces.
+* Future-proof client implementations by having them depend on Adapter interfaces, rather than concrete classes directly.
 
 ## 🏛Architecture
 
@@ -25,14 +27,12 @@ description: This is summary from the talk session.
 ## ☢What problems does it solve?
 
 * \[Use a bullet list to describe the problems\]
-* 
+
 ## ⏲When to use it?
 
-\[Describe conditions to use it\]
-
-{% hint style="info" %}
-\[Use hints to clarify ambiguous cases\]
-{% endhint %}
+* A library that would be helpful to your application does not implement the interface you require.
+* Your are designing a library or a framework and you want to ensure it can be used by classes not yet created.
+* You need to use several existing subclasses, but it's impractical to adapt their interface by subclassing every one.
 
 ## ⚠When not to use it?
 
@@ -52,7 +52,7 @@ description: This is summary from the talk session.
 
 ### Advantages
 
-* \[Describe as bullet list\]
+* Effective way to achieve Open/Closed Principle
 
 ### Disadvantages 
 
