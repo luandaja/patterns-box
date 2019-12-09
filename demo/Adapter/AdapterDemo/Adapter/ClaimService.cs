@@ -1,6 +1,4 @@
-﻿
-
-using Adapter.Models.Requests;
+﻿using Adapter.Models.Requests;
 
 namespace Adapter
 {
@@ -12,12 +10,14 @@ namespace Adapter
             _hipaaAdapter = hipaaAdapter;
         }
 
-        public void AddClaim(ClaimRequest request)
+        public int AddClaim(ClaimRequest request)
         {
             _hipaaAdapter.GetHipaaResponse(request);
 
             //Actual saving of the claim to the DB
             //...
+
+            return 1;
         }
     }
 }
