@@ -1,20 +1,20 @@
-﻿using Adapter.Models.Requests;
-using Adapter.ThirdPartyAPI;
+﻿
+
+using Adapter.Models.Requests;
 
 namespace Adapter
 {
     public class ClaimService
     {
-        private readonly HipaaClient _hipaaClient;
-        public ClaimService()
+        private readonly IHipaaAdapter _hipaaAdapter;
+        public ClaimService(IHipaaAdapter hipaaAdapter)
         {
-            _hipaaClient = new HipaaClient();
+            _hipaaAdapter = hipaaAdapter;
         }
 
         public void AddClaim(ClaimRequest request)
         {
-
-            _hipaaClient.GetHipaaResponse(request);
+            _hipaaAdapter.GetHipaaResponse(request);
 
             //Actual saving of the claim to the DB
             //...
