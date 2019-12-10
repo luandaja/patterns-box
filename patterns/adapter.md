@@ -18,9 +18,11 @@ description: This is summary from the talk session.
 
 ![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/adapter_real_world_case.png)
 
+If we live in a country that uses US plug standard (first image) and we travel to Europe with one of our devices, our laptop for example, we would soon realize that our laptop plug is incompatible with most of the outlets there since they comply with the European standard (third image). So, in order to use these outlets we need something that adapts our US plug to the European outlet, that's where the plug adapter comes in place (second image).
+
 ## ☢What problems does it solve?
 
-* Not being able to pass information between two separate incompatible interfaces.
+* Not being able to pass information between two incompatible interfaces.
 
 ## ⏲When to use it?
 
@@ -31,7 +33,7 @@ description: This is summary from the talk session.
 
 ## ⚠When not to use it?
 
-* When we want to add behavior to the incompatible interface
+* When we want to add behavior to the incompatible interface.
 
 ## ‼Common mistakes when implementing
 
@@ -42,9 +44,9 @@ description: This is summary from the talk session.
 
 ### Advantages
 
-* Complies to the Open/Closed Principle
-* Increases reusability and flexibility
-* Clients become simplified
+* Complies to the Open/Closed Principle, since we are allowing our code to be open to extension but closed to modification. We decide how and which library to use when we implement our interface, and at the same time we enforce that the response of said library keeps being the same since that's what our client is expecting.
+* Increases reusability and flexibility. We can reuse our interface anywhere we need to, again, implementing it with any library.
+* Clients become simplified. All the adaption overhead is moved to the concrete implementation class.
 
 ### Disadvantages 
 
@@ -54,8 +56,6 @@ description: This is summary from the talk session.
 ## Demo 
 
 {% hint style="info" %}
-The demo is hosted on the next github repository
+The demo is hosted on the next github repository \[Github Repository\]: [https://github.com/luandaja/patterns-box/tree/master/demo/Adapter/AdapterDemo](https://github.com/luandaja/patterns-box/tree/master/demo/Adapter/AdapterDemo)
 {% endhint %}
-
-\[Link here\]
 
