@@ -27,7 +27,7 @@ If we live in a country that uses US plug standard (first image) and we travel t
 ## ⏲When to use it?
 
 * When there is a class whose interfaces do not match the one we need. For example a library that would be helpful to your application does not implement the interface you require.
-* When we want to future proof existing code that adapts an incompatible library. This way we are not tied forever to the same libray but if needed, we can change it by implementing another adapter.
+* When we want to future proof existing code that adapts an incompatible library. This way we are not tied forever to the same library but if needed, we can change it by implementing another adapter.
 * When we want to decouple our code from the usage of an specific external library. Since we are using an interface rather than a specific class, we can easily change from one adapter implementation to another. 
 
 
