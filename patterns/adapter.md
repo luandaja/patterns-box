@@ -50,7 +50,7 @@ If we live in a country that uses US plug standard (first image) and we travel t
 
 ### Disadvantages 
 
-* The rabbit trail effect
+* The rabbit trail effect.
 * Prone to over-engineering
 
 ## Demo 
