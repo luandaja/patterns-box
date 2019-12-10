@@ -12,61 +12,44 @@ description: This is summary from the talk session.
 
 ## 🏛Architecture
 
-{% hint style="info" %}
-\[If needed add notes here\]
-{% endhint %}
-
-\[Insert an image to describe the expected architecture\]
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/adapter_architecture.png)
 
 ## 🌎Real case example
 
-\[Describe your case\]
-
-\[Add an image to support your text\]
+![](https://raw.githubusercontent.com/luandaja/patterns-box/master/patterns/.gitbook/assets/adapter_real_world_case.png)
 
 ## ☢What problems does it solve?
 
-* \[Use a bullet list to describe the problems\]
+* Not being able to pass information between two separate incompatible interfaces.
 
 ## ⏲When to use it?
 
-* A library that would be helpful to your application does not implement the interface you require.
-* Your are designing a library or a framework and you want to ensure it can be used by classes not yet created.
-* You need to use several existing subclasses, but it's impractical to adapt their interface by subclassing every one.
+* When there is a class whose interfaces do not match the one we need. For example a library that would be helpful to your application does not implement the interface you require.
+* When we want to future proof existing code that adapts an incompatible library. This way we are not tied forever to the same libray but if needed, we can change it by implementing another adapter.
+* When we want to decouple our code from the usage of an specific external library. Since we are using an interface rather than a specific class, we can easily change from one adapter implementation to another. 
+
 
 ## ⚠When not to use it?
 
-\[Describe conditions to avoid them\]
-
-{% hint style="warning" %}
-\[Use warning hints to clarify ambiguous cases\]
-{% endhint %}
+* When we want to add behavior to the incompatible interface
 
 ## ‼Common mistakes when implementing
 
-### \[Use heading 2 to summarize the mistake\]
-
-\[and describe it bellow\]
-
-## 🎭Effects
+* Confusing the pattern with other ones:
+	* Adding logic on top of the adaptee behaviour (Decorator)
+	* Hide complex logic that the adaptee uses (Facade)
+* The goal of the adapter pattern is not to add, remove or alter the behaviour of the adaptee.
 
 ### Advantages
 
-* Effective way to achieve Open/Closed Principle
+* Complies to the Open/Closed Principle
+* Increases reusability and flexibility
+* Clients become simplified
 
 ### Disadvantages 
 
-* \[Describe as bullet list\]
-
-### Drawbacks
-
-#### \[Use heading 3 to summarize\]
-
-\[describe it\]
-
-{% hint style="info" %}
-Use a hint to describe the suggested solution
-{% endhint %}
+* The rabbit trail effect
+* Prone to over-engineering
 
 ## Demo 
 
