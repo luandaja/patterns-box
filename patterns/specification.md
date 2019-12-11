@@ -18,7 +18,7 @@ We are developing an application related to glasses. We have the following funct
 * Apply a discount to all glasses of the same brand or that match a minimum number of sales
 * Filter the glasses displayed in the application according to their brand or those that match the minimum number of sales
 
-![](.gitbook/assets/specificationrealworldcase.JPG)
+![](../.gitbook/assets/specificationrealworldcase.JPG)
 
 In this example, we can identify that specific logic is being replicated across all the requirements we have. Those are:
 
@@ -34,14 +34,14 @@ The participants of this pattern would be:
 * The _**ISpecification**_ interface which will have our method _**IsSatisfeidBy**_.
 * The _**Concrete Specifications**_ ****which are classes that will implement the _**ISpecification**_ interface and will handle the business logic in the _**IsSatisfiedBy**_ method.
 
-![](.gitbook/assets/specification1.JPG)
+![](../.gitbook/assets/specification1.JPG)
 
 Let's consider the example we saw in the previously. Having in mind the logic we identified, we can apply the pattern the following way:
 
 * The _**ISpecification**_ would be our interface described by the pattern that will define the IsSatisfiedBy method.
 * Our _**Concrete Specifications**_ would be the _**BrandSpecification**_ ****and _**MinSalesSpecification**_. Each of them will handle the logic that their own names express. 
 
-![](.gitbook/assets/specification2.JPG)
+![](../.gitbook/assets/specification2.JPG)
 
 This way, we have decoupled the logic of matching by brand name and minimum number of sales into specific classes that will allow us to re use them anywhere we need in our application.
 
