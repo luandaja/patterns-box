@@ -4,6 +4,7 @@
 
 ## Patterns
 
+* [Adapter](patterns/adapter.md)
 * [Bridge](patterns/bridge.md)
 * [Facade](patterns/facade.md)
 * [Builder](patterns/builder.md)
