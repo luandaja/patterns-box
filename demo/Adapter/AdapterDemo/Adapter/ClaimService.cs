@@ -10,14 +10,11 @@ namespace Adapter
             _hipaaAdapter = hipaaAdapter;
         }
 
-        public int AddClaim(ClaimRequest request)
+        public string ProcessClaim(ClaimRequest request)
         {
-            _hipaaAdapter.GetHipaaResponse(request);
+            var response = _hipaaAdapter.GetHipaaResponse(request);
 
-            //Actual saving of the claim to the DB
-            //...
-
-            return 1;
+            return response;
         }
     }
 }

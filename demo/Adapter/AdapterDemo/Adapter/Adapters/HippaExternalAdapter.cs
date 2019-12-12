@@ -3,23 +3,24 @@ using Adapter.ThirdPartyAPI;
 
 namespace Adapter.Adapters
 {
-    public class HipaaAdapter : IHipaaAdapter
+    public class HipaaExternalAdapter : IHipaaAdapter
     {
-        private readonly HipaaClient _hipaaClient;
-        public HipaaAdapter()
+        private readonly HipaaExternalClient _hipaaClient;
+        public HipaaExternalAdapter()
         {
-            _hipaaClient = new HipaaClient();
+            _hipaaClient = new HipaaExternalClient();
         }
         public string GetHipaaResponse(ClaimRequest request)
         {
-            var hipaaRequest = new HipaaRequest { 
+            var hipaaRequest = new HipaaRequest
+            {
                 ClaimDescription = string.Concat(
                     request.ClaimStatus,
-                    "//",
+                    "--",
                     request.Locationid.ToString(),
-                    "//",
+                    "--",
                     request.ProviderId.ToString())
-                };
+            };
 
             return _hipaaClient.GetHipaaResponse(hipaaRequest);
         }

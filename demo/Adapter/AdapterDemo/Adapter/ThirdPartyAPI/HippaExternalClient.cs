@@ -2,11 +2,11 @@
 
 namespace Adapter.ThirdPartyAPI
 {
-    public class HipaaClient
+    public class HipaaExternalClient
     {
         public string GetHipaaResponse(HipaaRequest request)
         {
-            return request.ClaimDescription + "//Processed";
+            return request.ClaimDescription + "--Processed";
         }
     }
 }

@@ -2,5 +2,6 @@
 {
     public class HipaaRequest
     {
+        public string ClaimDescription { get; set; }
     }
 }
