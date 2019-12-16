@@ -1,39 +1,17 @@
-﻿using Strategy.Domain;
-
-namespace Strategy
+﻿namespace Strategy
 {
     public class ShippingCostCalculatorService
     {
-        public double CalculateShippingCost(Order order)
+        readonly IShippingCalculation shippingCalculation;
+
+        public ShippingCostCalculatorService(IShippingCalculation shippingCalculation)
         {
-            switch (order.OrderShippingMethod)
-            {
-                case OrderShippingMethod.FedEx:
-                    return CalcularForFedEx(order);
-
-                case OrderShippingMethod.UPS:
-                    return CalcularForUPS(order);
-
-                case OrderShippingMethod.USPS:
-                    return CalcularForUSPS(order);
-                default:
-                    return 0;
-            }
+            this.shippingCalculation = shippingCalculation;
         }
 
-        private double CalcularForUSPS(Order order)
+        public double CalculateShippingCost()
         {
-            return 3.00;
-        }
-
-        private double CalcularForUPS(Order order)
-        {
-            return 4.25;
-        }
-
-        private double CalcularForFedEx(Order order)
-        {
-            return 7.5;
+            return shippingCalculation.CalculateShippingCost();
         }
     }
 }

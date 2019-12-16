@@ -49,10 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrderService.cs" />
-    <Compile Include="OrderShippingMethod.cs" />
-    <Compile Include="Order.cs" />
-    <Compile Include="UnknownShippingCostException.cs" />
+    <Compile Include="ConcreteStrategies\USPSShippingCostStrategy.cs" />
+    <Compile Include="ConcreteStrategies\UPSShippingCostStrategy.cs" />
+    <Compile Include="ConcreteStrategies\FedExShippingCostStrategy.cs" />
+    <Compile Include="IShippingCalculation.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShippingCostCalculatorService.cs" />
