@@ -1,8 +1,9 @@
 ﻿
 namespace Strategy
 {
-    public interface IShippingCalculation
+    public interface IDeliveryProvider
     {
-        double CalculateShippingCost();
+        double CalculateShipping();
+        bool IsAplicable(DeliveryProvider shippingMethod);
     }
 }

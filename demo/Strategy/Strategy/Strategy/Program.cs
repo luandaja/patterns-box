@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using Strategy.ConcreteStrategies;
 
 namespace Strategy
@@ -7,17 +9,15 @@ namespace Strategy
     {
         static void Main(string[] args)
         {
-            ShippingCostCalculatorService fedEx = new ShippingCostCalculatorService(new FedExShippingCostStrategy());
-            var fedExShippingCost = fedEx.CalculateShippingCost();
-            Console.WriteLine($"FedEx Shipping Cost: {fedExShippingCost}");
 
-            ShippingCostCalculatorService ups = new ShippingCostCalculatorService(new UPSShippingCostStrategy());
-            var upsShippingCost = ups.CalculateShippingCost();
-            Console.WriteLine($"UPS Shipping Cost: {upsShippingCost}");
+            Console.WriteLine("Please type your delivery provider");
+            //var providerSelected = int.Parse(Console.ReadLine());
+            var providerSelected = Console.ReadLine();
 
-            ShippingCostCalculatorService usps = new ShippingCostCalculatorService(new USPSShippingCostStrategy());
-            var uspsShippingCost = usps.CalculateShippingCost();
-            Console.WriteLine($"USPS Shipping Cost: {uspsShippingCost}");
+            ShippingCostCalculatorService shippingService = new ShippingCostCalculatorService();
+            var shippingCost = shippingService.CalculateTotalPrice((DeliveryProvider)providerSelected);
+
+            Console.WriteLine($"The Shipping Fee: {shippingCost}");
             Console.ReadKey();
         }
     }

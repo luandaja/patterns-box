@@ -1,10 +1,15 @@
 ﻿namespace Strategy.ConcreteStrategies
 {
-    public class USPSShippingCostStrategy: IShippingCalculation
+    public class USPSShippingCostStrategy: IDeliveryProvider
     {
-        public double CalculateShippingCost()
+        public double CalculateShipping()
         {
             return 4.25;
+        }
+
+        public bool IsAplicable(DeliveryProvider shippingMethod)
+        {
+            return shippingMethod == DeliveryProvider.USPS;
         }
     }
 }
