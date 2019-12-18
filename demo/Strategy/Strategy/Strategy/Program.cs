@@ -10,14 +10,13 @@ namespace Strategy
         static void Main(string[] args)
         {
 
-            Console.WriteLine("Please type your delivery provider");
-            //var providerSelected = int.Parse(Console.ReadLine());
-            var providerSelected = Console.ReadLine();
+            Console.WriteLine("Please type your delivery provider \nFedEx: 1 \nUPS: 2 \nUSPS: 3");
+            var providerSelected = int.Parse(Console.ReadLine());
 
             ShippingCostCalculatorService shippingService = new ShippingCostCalculatorService();
             var shippingCost = shippingService.CalculateTotalPrice((DeliveryProvider)providerSelected);
 
-            Console.WriteLine($"The Shipping Fee: {shippingCost}");
+            Console.WriteLine($"The Shipping Fee is : {shippingCost} for this provider");
             Console.ReadKey();
         }
     }
