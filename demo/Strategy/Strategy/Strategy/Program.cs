@@ -16,7 +16,7 @@ namespace Strategy
             ShippingCostCalculatorService shippingService = new ShippingCostCalculatorService();
             var shippingCost = shippingService.CalculateTotalPrice((DeliveryProvider)providerSelected);
 
-            Console.WriteLine($"The Shipping Fee is : {shippingCost} for this provider");
+            Console.WriteLine($"The total price is : {shippingCost} for this provider");
             Console.ReadKey();
         }
     }

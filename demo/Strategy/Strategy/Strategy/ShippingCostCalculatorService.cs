@@ -21,7 +21,9 @@ namespace Strategy
 
         public double CalculateTotalPrice(DeliveryProvider provider)
         {
-            return Price + GetProviderFee(provider);
+            var deliveryFee = GetProviderFee(provider);
+            Console.WriteLine($"Delivery fee: {deliveryFee}");
+            return Price + deliveryFee;
         }
 
         private double GetProviderFee(DeliveryProvider provider)
