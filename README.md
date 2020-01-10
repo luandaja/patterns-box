@@ -24,11 +24,11 @@ The patterns-box talks are an effort to get involved on different software desig
 
 {% page-ref page="patterns/repository.md" %}
 
-### Mediator - by _James Ordinola_
+### Adapter - by _Miguel Salas_
 
-{% page-ref page="patterns/mediator.md" %}
+{% page-ref page="patterns/adapter.md" %}
 
-### Specification - by _Miguel Salas_
+### Specification - by _James Ordinola_
 
 {% page-ref page="patterns/specification.md" %}
 
@@ -36,9 +36,9 @@ The patterns-box talks are an effort to get involved on different software desig
 
 {% page-ref page="patterns/chain-of-responsibility.md" %}
 
-### Stategy - by _José Palacios_
+### Strategy - by _José Palacios_
 
-{% page-ref page="patterns/stategy.md" %}
+{% page-ref page="patterns/strategy.md" %}
 
 ### Technical support
 
